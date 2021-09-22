@@ -1,5 +1,5 @@
 {
-	"name": "moxio/captainhook-psalm",
+	"name": "dzentota/captainhook-psalm",
 	"type": "library",
 	"description": "Captain Hook Plugin to check for newly introduced Psalm errors",
 	"license": "MIT",
