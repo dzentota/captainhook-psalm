@@ -47,7 +47,12 @@ final class PsalmCheckAction implements Action
 
         $psalmArgs = [];
         foreach ($checkedPhpFiles as $checkedPhpFile) {
+            $checkedPhpFile = preg_replace('~^sugarcrm/~', '', $checkedPhpFile);
             $psalmArgs[] = escapeshellarg($checkedPhpFile);
+        }
+        
+        if (file_exists('baseline.xml')) {
+            $psalmArgs[] = '--use-baseline=baseline.xml';
         }
 
         $psalmBin = str_replace("/", DIRECTORY_SEPARATOR, "./vendor/bin/psalm");
