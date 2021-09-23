@@ -55,7 +55,7 @@ final class PsalmCheckAction implements Action
             $psalmArgs[] = '--use-baseline=baseline.xml';
         }
 
-        $psalmBin = str_replace("/", DIRECTORY_SEPARATOR, "./vendor/bin/psalm");
+        $psalmBin = str_replace("/", DIRECTORY_SEPARATOR, "./vendor/bin/psalm.phar");
         $psalmResult = $this->processor->run($psalmBin . " " . implode(" ", $psalmArgs));
 
         if ($psalmResult->isSuccessful() === false) {
